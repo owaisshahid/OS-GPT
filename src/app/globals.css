@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #8b5cf6; /* Purple-500 */
+  --primary-dark: #7c3aed; /* Purple-600 */
+  --primary-light: #a78bfa; /* Purple-400 */
+  --secondary: #000000; /* Black */
+  --secondary-light: #1f1f1f; /* Light black */
+  --secondary-dark: #000000; /* Pure black */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #a78bfa; /* Purple-400 - lighter in dark mode */
+    --primary-dark: #8b5cf6; /* Purple-500 */
+    --primary-light: #c4b5fd; /* Purple-300 */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area insets for mobile devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 767px) {
+  button, input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  button {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+    min-width: 44px;
+  }
+}
+
+/* Markdown content styling */
+.markdown-content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.markdown-content h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.markdown-content h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.dark .markdown-content h1,
+.dark .markdown-content h2,
+.dark .markdown-content h3,
+.dark .markdown-content h4,
+.dark .markdown-content h5,
+.dark .markdown-content h6 {
+  color: #a78bfa; /* Purple-400 */
+}
+
+.markdown-content ul, .markdown-content ol {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+.markdown-content table th {
+  background-color: #f1f5f9;
+}
+
+.dark .markdown-content table th {
+  background-color: #1f1f1f;
+}
+
+.dark .markdown-content table td,
+.dark .markdown-content table th {
+  border-color: #4c1d95; /* Purple-900 */
+}
+
+/* Responsive adjustments for markdown content */
+@media (max-width: 480px) {
+  .markdown-content {
+    font-size: 0.8125rem;
+  }
+  
+  .markdown-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .markdown-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .markdown-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.6875rem;
+  }
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #8b5cf6; /* Purple-500 */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed; /* Purple-600 */
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #a78bfa; /* Purple-400 */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6; /* Purple-500 */
+  }
+}
