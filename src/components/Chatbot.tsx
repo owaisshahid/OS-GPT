@@ -179,7 +179,7 @@ export default function ChatBot() {
             className="text-lg sm:text-xl font-bold py-3 text-center 
             bg-gradient-to-r from-purple-800 to-blue-700 text-white shadow-lg tracking-wide"
           >
-            Owais Chatbot 🤖
+            O/S Chatbot 🤖
           </h1>
 
           {/* Messages */}
@@ -233,10 +233,9 @@ export default function ChatBot() {
             <button
               onClick={sendMessage}
               disabled={loading}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 
-    px-5 py-3 rounded-r-2xl hover:scale-105 
-    transition-transform duration-300 shadow-md 
-    hover:shadow-purple-500/40 disabled:opacity-50"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-3 rounded-r-2xl 
+                hover:scale-105 transition-transform duration-300 shadow-md 
+                hover:shadow-purple-500/40 disabled:opacity-50"
             >
               Send 🚀
             </button>
